@@ -1,0 +1,86 @@
+name: 'C++ CI'
+
+on:
+  push:
+    branches:
+      - main
+      - feature/**
+      - release/**
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libboost-test-dev libboost-filesystem-dev \
+            libboost-program-options-dev
+      - run: cmake -S . -B build -DPATCH_VERSION=${{ github.run_number }} -DWITH_BOOST_TEST=ON
+      - run: cmake --build build -j4
+      - run: ctest --test-dir build --output-on-failure
+      - run: cmake --build build --target package
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: ${{ contains(github.ref, 'release') }}
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libboost-test-dev libboost-filesystem-dev \
+            libboost-program-options-dev
+      - run: cmake -S . -B build -DPATCH_VERSION=${{ github.run_number }} -DWITH_BOOST_TEST=ON
+      - run: cmake --build build -j4
+      - run: ctest --test-dir build --output-on-failure
+      - run: cmake --build build --target package
+      - name: Create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          asset=$(ls build/otus-cpp-hw-*-Linux.deb)
+          gh release create "${{ github.run_number }}" "$asset" \
+            --title "Release ${{ github.run_number }}" \
+            --notes "Automated release from ${{ github.ref_name }}"
+
+  docs:
+    needs: deploy
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    if: ${{ contains(github.ref, 'release') }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Install Doxygen
+        run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
+      - name: Create documentation
+        run: doxygen ./Doxyfile
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './html/'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
