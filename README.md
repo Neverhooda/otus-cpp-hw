@@ -6,6 +6,7 @@ OTUS homework repository
 - HW01 github_actions: ![HW01 github_actions](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=feature/github_actions)
 - HW02 ip_filter: ![HW02 ip_filter](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/ip-filter)
 - HW03 allocator: ![HW03 allocator](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/allocator)
+- HW04 sfinae_doxygen: ![HW04 sfinae_doxygen](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/sfinae_doxygen)
 
 ## Requirements
  - cmake 3.12
@@ -39,6 +40,7 @@ $ cmake --build .
 | 01 | version + hello world | `helloworld_cli` | `test_hw01_version` |
 | 02 | IP address filtering, reads TSV on stdin | `ip_filter_cli` | `test_hw02_ip_filter` |
 | 03 | custom allocator and container demo | `hw_allocator_cli` | `test_hw03_custom_allocator`, `test_hw03_custom_vector` |
+| 04 | SFINAE `print_ip` demo | `hw_sfinae_cli` | `test_hw04_sfinae` |
 
 ## Usage
 
@@ -71,4 +73,10 @@ PS E:\study\otus\build\Debug> certutil -hashfile .\hash_unix.md5 MD5
 `hw_allocator_cli` takes no arguments; it prints a demonstration of the custom allocator and container.
 ```shell script
 $ hw_allocator_cli
+```
+
+### HW04 Usage hw_sfinae_cli
+`hw_sfinae_cli` takes no arguments; it prints a demonstration of the SFINAE `print_ip` overloads.
+```shell script
+$ hw_sfinae_cli
 ```
