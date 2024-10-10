@@ -5,6 +5,7 @@ OTUS homework repository
 - Last build: ![Last build](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg)
 - HW01 github_actions: ![HW01 github_actions](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=feature/github_actions)
 - HW02 ip_filter: ![HW02 ip_filter](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/ip-filter)
+- HW03 allocator: ![HW03 allocator](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/allocator)
 
 ## Requirements
  - cmake 3.12
@@ -37,6 +38,7 @@ $ cmake --build .
 |----|-------|------------|-------------|
 | 01 | version + hello world | `helloworld_cli` | `test_hw01_version` |
 | 02 | IP address filtering, reads TSV on stdin | `ip_filter_cli` | `test_hw02_ip_filter` |
+| 03 | custom allocator and container demo | `hw_allocator_cli` | `test_hw03_custom_allocator`, `test_hw03_custom_vector` |
 
 ## Usage
 
@@ -63,4 +65,10 @@ On windows we must convert line endings from LFCF (windows style) to CF(unix stu
 PS E:\study\otus\build\Debug> cat .\ip_filter.tsv |.\ip_filter_cli.exe > hash.md5
 PS E:\study\otus\build\Debug> ((Get-Content hash.md5) -join "`n") + "`n" | Set-Content -NoNewline hash_unix.md5
 PS E:\study\otus\build\Debug> certutil -hashfile .\hash_unix.md5 MD5
+```
+
+### HW03 Usage hw_allocator_cli
+`hw_allocator_cli` takes no arguments; it prints a demonstration of the custom allocator and container.
+```shell script
+$ hw_allocator_cli
 ```
