@@ -7,6 +7,7 @@ OTUS homework repository
 - HW02 ip_filter: ![HW02 ip_filter](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/ip-filter)
 - HW03 allocator: ![HW03 allocator](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/allocator)
 - HW04 sfinae_doxygen: ![HW04 sfinae_doxygen](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/sfinae_doxygen)
+- HW05 graphic_editor: ![HW05 graphic_editor](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/graphic-editor)
 
 ## Requirements
  - cmake 3.12
@@ -41,6 +42,7 @@ $ cmake --build .
 | 02 | IP address filtering, reads TSV on stdin | `ip_filter_cli` | `test_hw02_ip_filter` |
 | 03 | custom allocator and container demo | `hw_allocator_cli` | `test_hw03_custom_allocator`, `test_hw03_custom_vector` |
 | 04 | SFINAE `print_ip` demo | `hw_sfinae_cli` | `test_hw04_sfinae` |
+| 05 | graphic editor demo | `hw_graphic_editor_cli` | `test_hw05_graphic_editor` |
 
 ## Usage
 
@@ -79,4 +81,10 @@ $ hw_allocator_cli
 `hw_sfinae_cli` takes no arguments; it prints a demonstration of the SFINAE `print_ip` overloads.
 ```shell script
 $ hw_sfinae_cli
+```
+
+### HW05 Usage hw_graphic_editor_cli
+`hw_graphic_editor_cli` takes no arguments; it prints a demonstration of the graphic editor.
+```shell script
+$ hw_graphic_editor_cli
 ```
