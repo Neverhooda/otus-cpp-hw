@@ -8,6 +8,7 @@ OTUS homework repository
 - HW03 allocator: ![HW03 allocator](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/allocator)
 - HW04 sfinae_doxygen: ![HW04 sfinae_doxygen](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/sfinae_doxygen)
 - HW05 graphic_editor: ![HW05 graphic_editor](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/graphic-editor)
+- HW06 n_matrix: ![HW06 n_matrix](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/matrix)
 
 ## Requirements
  - cmake 3.12
@@ -43,6 +44,7 @@ $ cmake --build .
 | 03 | custom allocator and container demo | `hw_allocator_cli` | `test_hw03_custom_allocator`, `test_hw03_custom_vector` |
 | 04 | SFINAE `print_ip` demo | `hw_sfinae_cli` | `test_hw04_sfinae` |
 | 05 | graphic editor demo | `hw_graphic_editor_cli` | `test_hw05_graphic_editor` |
+| 06 | N-dimensional sparse matrix demo | `hw_n_matrix_cli` | `test_hw06_matrix` |
 
 ## Usage
 
@@ -87,4 +89,10 @@ $ hw_sfinae_cli
 `hw_graphic_editor_cli` takes no arguments; it prints a demonstration of the graphic editor.
 ```shell script
 $ hw_graphic_editor_cli
+```
+
+### HW06 Usage hw_n_matrix_cli
+`hw_n_matrix_cli` takes no arguments; it prints a demonstration of the N-dimensional sparse matrix.
+```shell script
+$ hw_n_matrix_cli
 ```
