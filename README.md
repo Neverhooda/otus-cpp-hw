@@ -9,6 +9,7 @@ OTUS homework repository
 - HW04 sfinae_doxygen: ![HW04 sfinae_doxygen](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/sfinae_doxygen)
 - HW05 graphic_editor: ![HW05 graphic_editor](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/graphic-editor)
 - HW06 n_matrix: ![HW06 n_matrix](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/matrix)
+- HW07 terminal: ![HW07 terminal](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/terminal)
 
 ## Requirements
  - cmake 3.12
@@ -45,6 +46,7 @@ $ cmake --build .
 | 04 | SFINAE `print_ip` demo | `hw_sfinae_cli` | `test_hw04_sfinae` |
 | 05 | graphic editor demo | `hw_graphic_editor_cli` | `test_hw05_graphic_editor` |
 | 06 | N-dimensional sparse matrix demo | `hw_n_matrix_cli` | `test_hw06_matrix` |
+| 07 | bulk command terminal | `bulk` | `test_hw07_terminal` |
 
 ## Usage
 
@@ -95,4 +97,10 @@ $ hw_graphic_editor_cli
 `hw_n_matrix_cli` takes no arguments; it prints a demonstration of the N-dimensional sparse matrix.
 ```shell script
 $ hw_n_matrix_cli
+```
+
+### HW07 Usage bulk
+`bulk` reads commands from stdin and executes them in static blocks of `<block_size>` lines.
+```shell script
+$ bulk <block_size>
 ```
