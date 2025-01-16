@@ -10,6 +10,7 @@ OTUS homework repository
 - HW05 graphic_editor: ![HW05 graphic_editor](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/graphic-editor)
 - HW06 n_matrix: ![HW06 n_matrix](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/matrix)
 - HW07 terminal: ![HW07 terminal](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/terminal)
+- HW08 boost: ![HW08 boost](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/boost)
 
 ## Requirements
  - cmake 3.12
@@ -47,6 +48,7 @@ $ cmake --build .
 | 05 | graphic editor demo | `hw_graphic_editor_cli` | `test_hw05_graphic_editor` |
 | 06 | N-dimensional sparse matrix demo | `hw_n_matrix_cli` | `test_hw06_matrix` |
 | 07 | bulk command terminal | `bulk` | `test_hw07_terminal` |
+| 08 | duplicate file finder | `bayan` | `test_hw08_boost` |
 
 ## Usage
 
@@ -103,4 +105,29 @@ $ hw_n_matrix_cli
 `bulk` reads commands from stdin and executes them in static blocks of `<block_size>` lines.
 ```shell script
 $ bulk <block_size>
+```
+
+### HW08 Usage bayan
+Usage example:
+```shell script
+$ bayan -d "~\test" -b 64
+```
+Allowed options:
+```shell script
+Allowed options:
+  --help                          produce help message
+  -d [ --directories ] arg        directories to scan
+  -e [ --exclude ] arg            directories to exclude
+  -m [ --mask ] arg               file name masks
+  -s [ --min-size ] arg (=1)      minimum file size
+  -b [ --block-size ] arg (=4096) block size for reading
+  -l [ --level ] arg (=1)         scanning level (0 Current directory only or 1 Recursive scanning)
+  -H [ --hash ] arg (=md5)        hash type (md5 or crc32)
+```
+Example output :
+```
+hash: 09865ADB932231FB4019B4D048696B01, dublicates: 
+ - home/neverhooda/test/2.txt 
+ - home/neverhooda/test/test/4.bin 
+ - home/neverhooda/test/test/4.txt 
 ```
