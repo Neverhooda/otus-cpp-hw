@@ -19,11 +19,12 @@ OTUS homework repository
 ## Requirements
  - cmake 3.12
  - boost 1.74
+ - eigen 3.4
 
 ## Prepare
 ### Linux
 ```shell script
-# apt-get update && sudo apt-get install libboost-test-dev libboost-filesystem-dev libboost-program-options-dev -y
+# apt-get update && sudo apt-get install libboost-test-dev libboost-filesystem-dev libboost-program-options-dev libeigen3-dev -y
 ```
 
 ### Windows
@@ -57,6 +58,7 @@ $ cmake --build .
 | 10 | async TCP bulk server | `bulk_server` | `test_hw10_network_terminal` |
 | 11 | TCP server with join/table commands | `join_server` | `test_hw11_join_server` |
 | 12 | mapreduce framework | `mapreduce` | `test_hw12_map_reduce` |
+| 13 | MLP image classifier | `ml_computer_vision` | `test_hw13_ml_computer_vision` |
 
 ## Usage
 
@@ -159,4 +161,9 @@ $ join_server <port>
 ### HW12 Usage mapreduce
 ```shell script
 $ mapreduce <src> <mnum> <rnum>
+```
+
+### HW13 Usage ml_computer_vision
+```shell script
+$ ml_computer_vision ml/w1.txt ml/w2.txt ml/test.csv
 ```
