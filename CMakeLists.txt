@@ -27,6 +27,7 @@ include(${CMAKE_SOURCE_DIR}/cmake/hw06.cmake)
 include(${CMAKE_SOURCE_DIR}/cmake/hw07.cmake)
 include(${CMAKE_SOURCE_DIR}/cmake/hw08.cmake)
 include(${CMAKE_SOURCE_DIR}/cmake/hw09.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/hw10.cmake)
 
 set(CPACK_GENERATOR DEB)
 set(CPACK_PACKAGE_NAME "otus-cpp-hw")

@@ -12,6 +12,7 @@ OTUS homework repository
 - HW07 terminal: ![HW07 terminal](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/terminal)
 - HW08 boost: ![HW08 boost](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/boost)
 - HW09 async terminal: ![HW09 async terminal](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/async-terminal)
+- HW10 network terminal: ![HW10 network terminal](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/network-terminal)
 
 ## Requirements
  - cmake 3.12
@@ -51,6 +52,7 @@ $ cmake --build .
 | 07 | bulk command terminal | `bulk` | `test_hw07_terminal` |
 | 08 | duplicate file finder | `bayan` | `test_hw08_boost` |
 | 09 | async bulk terminal | `async_cli` | `test_hw09_async` |
+| 10 | async TCP bulk server | `bulk_server` | `test_hw10_network_terminal` |
 
 ## Usage
 
@@ -138,4 +140,9 @@ hash: 09865ADB932231FB4019B4D048696B01, dublicates:
 `async_cli` is the async version of the HW07 bulk terminal; it reads commands from stdin and executes them in static blocks of `<block_size>` lines.
 ```shell script
 $ async_cli <block_size>
+```
+
+### HW10 Usage bulk_server
+```shell script
+$ bulk_server <port> <bulk_size>
 ```
