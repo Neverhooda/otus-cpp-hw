@@ -11,6 +11,7 @@ OTUS homework repository
 - HW06 n_matrix: ![HW06 n_matrix](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/matrix)
 - HW07 terminal: ![HW07 terminal](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/terminal)
 - HW08 boost: ![HW08 boost](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/boost)
+- HW09 async terminal: ![HW09 async terminal](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/async-terminal)
 
 ## Requirements
  - cmake 3.12
@@ -49,6 +50,7 @@ $ cmake --build .
 | 06 | N-dimensional sparse matrix demo | `hw_n_matrix_cli` | `test_hw06_matrix` |
 | 07 | bulk command terminal | `bulk` | `test_hw07_terminal` |
 | 08 | duplicate file finder | `bayan` | `test_hw08_boost` |
+| 09 | async bulk terminal | `async_cli` | `test_hw09_async` |
 
 ## Usage
 
@@ -130,4 +132,10 @@ hash: 09865ADB932231FB4019B4D048696B01, dublicates:
  - home/neverhooda/test/2.txt 
  - home/neverhooda/test/test/4.bin 
  - home/neverhooda/test/test/4.txt 
+```
+
+### HW09 Usage async_cli
+`async_cli` is the async version of the HW07 bulk terminal; it reads commands from stdin and executes them in static blocks of `<block_size>` lines.
+```shell script
+$ async_cli <block_size>
 ```
