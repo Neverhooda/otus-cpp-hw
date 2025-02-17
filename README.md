@@ -13,6 +13,7 @@ OTUS homework repository
 - HW08 boost: ![HW08 boost](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/boost)
 - HW09 async terminal: ![HW09 async terminal](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/async-terminal)
 - HW10 network terminal: ![HW10 network terminal](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/network-terminal)
+- HW11 join server: ![HW11 join server](https://github.com/neverhoodanx/otus-cpp-hw/actions/workflows/release.yml/badge.svg?branch=release/join_server)
 
 ## Requirements
  - cmake 3.12
@@ -53,6 +54,7 @@ $ cmake --build .
 | 08 | duplicate file finder | `bayan` | `test_hw08_boost` |
 | 09 | async bulk terminal | `async_cli` | `test_hw09_async` |
 | 10 | async TCP bulk server | `bulk_server` | `test_hw10_network_terminal` |
+| 11 | TCP server with join/table commands | `join_server` | `test_hw11_join_server` |
 
 ## Usage
 
@@ -145,4 +147,9 @@ $ async_cli <block_size>
 ### HW10 Usage bulk_server
 ```shell script
 $ bulk_server <port> <bulk_size>
+```
+
+### HW11 Usage join_server
+```shell script
+$ join_server <port>
 ```
